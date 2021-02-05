@@ -1,4 +1,7 @@
 import time
+import os
+
+from dotenv import load_dotenv
 
 from pubnub.pubnub import PubNub
 from pubnub.pnconfiguration import PNConfiguration
@@ -6,9 +9,10 @@ from pubnub.callbacks import SubscribeCallback
 
 from scripts.modules.blockchain.block import Block
 
+load_dotenv()
 pnconfig = PNConfiguration()
-pnconfig.subscribe_key = 'sub-c-aab2ca4a-66b2-11eb-941a-1292edd3dfab'
-pnconfig.publish_key = 'pub-c-8271ec1d-5abf-443d-a626-4b40f9e9d7d7'
+pnconfig.subscribe_key = os.getenv("SUBSCRIBE_KEY")
+pnconfig.publish_key = os.getenv("PUBLISH_KEY")
 
 
 CHANNELS = {

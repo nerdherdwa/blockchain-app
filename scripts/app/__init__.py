@@ -3,6 +3,7 @@ import requests
 import os
 
 from flask import Flask, jsonify
+from dotenv import load_dotenv
 
 from scripts.modules.blockchain.blockchain import Blockchain
 from scripts.pubsub import PubSub
@@ -10,6 +11,7 @@ from scripts.pubsub import PubSub
 app = Flask(__name__)
 blockchain = Blockchain()
 pubsub = PubSub(blockchain)
+load_dotenv()
 
 
 @app.route('/')
