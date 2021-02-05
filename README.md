@@ -64,3 +64,15 @@ python -m scripts.app
 ```
 
 will run app on different port than main app
+
+**Environment Variables and Secrets**
+
+store pubsub publish keys and subscribe keys in .env file
+
+create .env file in home directory or project and add the following secrets
+
+```
+# pubsub config
+SUBSCRIBE_KEY=add your subscribe for your pubsub app
+PUBLISH_KEY=add your subscribe for your pubsub app
+```
